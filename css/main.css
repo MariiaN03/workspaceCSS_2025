@@ -1,0 +1,290 @@
+/** 00 css variables**/
+:root{
+    --body-color: hsl(19, 8%, 54%);
+    --h-color: hsl(0, 29%, 5%);
+
+    /**PAGES **/
+    --page-color: hsl(35, 25%, 85%);
+    --page-fix-width: 20vw;
+    --page-fix-top: 85%;
+
+    /**SIDEBAR**/
+    --side-bar-color: hsl(30, 33%, 32%);
+    --side-bar-top: 17%;
+    --side-bar-right: 1%;
+    --side-bar-height: 70%;
+    --side-bar-width: 22%;
+}
+
+/** play**/
+p::first-letter {
+    color: hsl(0, 50%, 36%);
+}
+p::first-line {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+
+
+/** 01 color**/
+body {
+    background-color: var(--body-color);
+}
+.intro {
+    background-color: var(--page-color);
+  
+}
+.sidebar {
+    background-color: var(--side-bar-color);
+}   
+h1, h2, h3, h4, h5, h6 {
+    color: var(--h-color);
+}
+
+/** 02 layout **/
+div.participation, div.benefits, div.requirements, div.explanation { 
+    position: fixed;
+    width: var(--page-fix-width);
+    top: var(--page-fix-top);
+    
+    
+}
+
+div.participation {
+    left: 1vw;
+    --gap: 8%;            
+    --fill: hsl(34, 22%, 75%); 
+    background: linear-gradient(to bottom, transparent var(--gap), var(--fill) 0);
+    z-index: 8;
+}
+div.benefits {
+    left: 13vw;
+    --gap: 17%;            
+    --fill: hsl(34, 22%, 75%); 
+    background: linear-gradient(to bottom, transparent var(--gap), var(--fill) 0);
+    z-index: 7;
+}
+div.requirements {
+    left: 25vw;
+    width: calc(var(--page-fix-width) + 7vw);
+    --gap: 6%;            
+    --fill: hsl(34, 22%, 75%); 
+    background: linear-gradient(to bottom, transparent var(--gap), var(--fill) 0);
+    z-index: 6;
+}
+div.explanation {
+    left: 40.5vw;
+    --gap: 10%;            
+    --fill: hsl(34, 22%, 75%); 
+    background: linear-gradient(to bottom, transparent var(--gap), var(--fill) 0);
+    z-index: 6;
+}
+/**FINISH OTHER DIV LAYOUT**/
+
+/**Animation_Pages**/
+div.participation:active {
+    transition: transform 1s ease;
+    transform: translateY(-90%);
+}
+div.benefits:active{
+    transition: transform 1s ease;
+    transform: translateY(-80%);
+}
+div.requirements:active {
+    transition: transform 1s ease;
+    transform: translateY(-94%);
+}
+div.explanation:active {
+    transition: transform 1s ease;
+    transform: translateY(-90%);
+}
+
+/** Round Corners**/
+div.participation h3, div.benefits h3, div.requirements h3, div.explanation h3{
+    background-color: hsl(26, 38%, 25%);
+    width: 50%;
+    margin-top: 0%;
+    padding-top: 1.4vh;
+    height: 4.6vh;
+    border-top-left-radius: 30px;
+    padding-left: 2.3vh;
+}
+div.explanation h3{
+    width: 80%;
+}
+
+
+
+    
+
+/**side-bar**/
+.sidebar{
+    position: absolute;
+    top: var(--side-bar-top);
+    right: var(--side-bar-right);
+    min-height: var(--side-bar-height);
+    width: var(--side-bar-width);
+    clip-path: polygon(0% 0%,      /* use x, y coordinates (measurment of block, so if width 50 px,  x=100%=50px; 1st place - top left angle, 2d- top right angle, 3d - bottom right angle and so on*/
+                        100% 0%,    
+                        100% 85%,   
+                        50% 100%,   
+                        0% 85%);
+    padding: 0% 0.5% 1vw;
+    z-index: 6;
+}
+
+ul{
+    list-style-image: url(../img/star.png);
+    margin: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: clamp(16px, 5vw, 28px);
+}
+.sidebar a{
+    text-decoration: none;
+    color: hsl(0, 39%, 87%);
+}
+.sidebar a:hover{
+    color: hsl(0, 60%, 71%);
+}
+.sidebar a:visited{
+    color: hsl(0, 39%, 87%);
+}
+.sidebar h3{
+    color: hsl(0, 0%, 0%);
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+
+
+
+/**extra-4 decaration block**/
+div.extra2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: hsla(30, 36%, 14%, 0.964); 
+    z-index: 8;
+    
+}
+
+div.extra1{
+    position: fixed;
+    left: 25%;
+    top: 8%;
+    transform-origin: center;
+    transform: rotate(5deg);
+    width: 35%;
+    height: 82vh;
+
+    background-image: url(../img/newspaper1.jpg);
+    box-shadow: 1.5px 5px 1vh hsla(0, 0%, 0%, 0.232);
+}
+
+[role="banner"]{
+    transform: rotate(5deg);
+    position: fixed;     
+    width: 60vh;
+    background-image: url(../img/newspaper1.jpg);
+    top: 2vh; 
+    right: -95vh;   
+    box-shadow: 0 8px 20px 0 rgba(0,0,0,.15); 
+    
+}
+[role="banner"] h1, h2{
+    padding-left: 2%;
+}
+
+.intro{
+    position: fixed;
+    left: 22%;
+    top: 8%;
+    width: 35%;
+    height: 80vh;
+    transform-origin: center;
+    transform: rotate(-5deg);
+    z-index: 5;
+    padding: 0.5%;
+    box-shadow: 1.5px 5px 1vh hsla(0, 0%, 0%, 0.232);
+}
+
+footer{
+    position: fixed;
+    bottom: 1%;
+    left: 80%;
+    width: 11%;
+    height: 3vh;
+    z-index: 9;
+    animation: uglyTransition 10s linear infinite;
+}
+footer a{
+    text-decoration: none;
+    color: hsl(0, 39%, 87%);
+}
+footer a:hover{
+    color: hsl(0, 60%, 71%);
+}
+footer a:visited{
+    color: hsl(0, 39%, 87%);
+}
+
+h2{
+    background-image: linear-gradient(80deg, hsla(0, 66%, 78%, 0.447), hsla(43, 25%, 75%, 0.359));
+    animation: changeColor 3s linear infinite;
+}
+
+@keyframes changeColor{
+    from {background-image: linear-gradient(80deg, hsla(0, 66%, 78%, 0.447), hsla(43, 25%, 75%, 0.359));}
+    50% {background-image: linear-gradient(180deg,hsla(43, 25%, 75%, 0.359), hsla(0, 66%, 78%, 0.447));}
+    to {background-image: linear-gradient(290deg, hsla(43, 25%, 75%, 0.359), hsla(0, 66%, 78%, 0.447));}
+}
+
+@keyframes uglyTransition{
+    from {transform: translateX(0%);}
+    to {transform: translateX(-80%);}
+}
+
+
+
+
+
+
+/** GRID inClass excersise**/
+
+.one{
+  grid-column: 2/4;
+  grid-row: 2/4;
+}
+
+.two{
+  grid-column: 1/ 4;
+  grid-row: 0/1;
+}
+
+.three{
+    grid-column: 1/ 1;
+  grid-row: 2/4;
+}
+
+.four{
+  grid-column: 4/ 5;
+  grid-row: 1/3;
+}
+
+.five{
+  grid-column: 1/ 4;
+  grid-row: 4/5;
+}
+
+.six{
+  grid-column: 3/ 5;
+  grid-row: 3/5;
+}
+
+
+
+
